@@ -1,5 +1,5 @@
-#ifndef __LIBSEE_MACROS_H__
-#define __LIBSEE_MACROS_H__
+#ifndef __libcee_MACROS_H__
+#define __libcee_MACROS_H__
 
 /**
  *  _____   _______ ______ _______ _______ _______ 

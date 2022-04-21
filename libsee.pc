@@ -3,8 +3,8 @@ exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${exec_prefix}/include
  
-Name: libsee
+Name: libcee
 Description: Useful small functions for C++ and C
 Version: 0.1.0
 Libs: -L${libdir} -lsee
-Cflags: -I${includedir}/libsee
+Cflags: -I${includedir}/libcee

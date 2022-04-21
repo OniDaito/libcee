@@ -13,7 +13,7 @@
 
 #include "file.hpp"
 
-namespace libsee {
+namespace libcee {
 
 /**
  * Basic file reading. Reads chars

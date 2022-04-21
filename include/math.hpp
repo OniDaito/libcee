@@ -1,5 +1,5 @@
-#ifndef __LIBSEE_MATH_H__
-#define __LIBSEE_MATH_H__
+#ifndef __libcee_MATH_H__
+#define __libcee_MATH_H__
 
 /**
  *  _____   _______ ______ _______ _______ _______ 
@@ -14,7 +14,7 @@
  *
  */
 
-namespace libsee {
+namespace libcee {
 static const double PI = M_PI;
 
 inline static double RadToDeg(const double &x) { return x * 180.0 / PI; }

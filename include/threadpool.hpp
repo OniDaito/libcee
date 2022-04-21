@@ -1,5 +1,5 @@
-#ifndef LIBSEE_THREAD_POOL_H
-#define LIBSEE_THREAD_POOL_H
+#ifndef libcee_THREAD_POOL_H
+#define libcee_THREAD_POOL_H
 
 /**
  *  _____   _______ ______ _______ _______ _______ 
@@ -31,7 +31,7 @@
 #include <type_traits> //invoke_result
 
 
-namespace libsee {
+namespace libcee {
 
 class ThreadPool {
 public:

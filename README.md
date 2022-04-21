@@ -1,4 +1,4 @@
-# libsee - Useful C and C++ utils.
+# libcee - Useful C and C++ utils.
 
 A collection of useful C and C++ functions I've written over the while.
 

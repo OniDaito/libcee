@@ -1,5 +1,5 @@
-#ifndef __LIBSEE_FILE_H__
-#define __LIBSEE_FILE_H__
+#ifndef __libcee_FILE_H__
+#define __libcee_FILE_H__
 
 /**
  *  _____   _______ ______ _______ _______ _______ 
@@ -23,7 +23,7 @@
 #include <experimental/filesystem>
 #endif
 
-namespace libsee {
+namespace libcee {
 
 std::vector<char> ReadFile(const std::string& filename);
 std::vector<std::string> ReadFileLines(const std::string& filename);

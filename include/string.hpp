@@ -1,5 +1,5 @@
-#ifndef __LIBSEE_STRING_H__
-#define __LIBSEE_STRING_H__
+#ifndef __libcee_STRING_H__
+#define __libcee_STRING_H__
 
 /**
  *  _____   _______ ______ _______ _______ _______ 
@@ -40,7 +40,7 @@
 #endif
 
 
-namespace libsee {
+namespace libcee {
 
 template<class T> inline std::string ToString(const T& t) {
   std::ostringstream stream;
