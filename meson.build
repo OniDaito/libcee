@@ -1,5 +1,5 @@
 # Project details
-project('see', 'cpp',
+project('cee', 'cpp',
   version : '0.1',
   default_options : ['warning_level=3', 'cpp_std=c++17', 'werror=false'])
 
@@ -48,7 +48,7 @@ build_args += [
 
 
 # The see Library itself
-see_lib = library('see', sources : [
+cee_lib = library('cee', sources : [
   'src/file.cpp',
   ],
   include_directories : include_dirs,
