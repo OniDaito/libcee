@@ -56,11 +56,15 @@ cee_lib = library('cee', sources : [
   include_directories : include_dirs,
   link_args : '-Wl,-lstdc++fs,-lpthread',
   c_args : build_args,
+  install : true,
  )
 
 # Installer
-# Linux
-if host_machine.system() == 'linux'
-  # install_data('myapp.sh', install_dir : '.')
-  meson.add_install_script('linux_installer.sh')
-endif
+headers = [ 'include/file.hpp',
+'include/macros.hpp',
+'include/math.hpp',
+'include/string.hpp',
+'include/threadpool.hpp',
+ ]
+install_headers(headers, subdir : 'libcee')
+
