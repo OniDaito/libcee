@@ -13,14 +13,14 @@ build_args = [
 
 # Debug or release
 if get_option('buildtype') == 'debug'
-  add_global_arguments('-DDEBUG', language : 'cpp')
+  add_project_arguments('-DDEBUG', language : 'cpp')
 endif
 
 if get_option('buildtype') == 'release'
-  add_global_arguments('-O3', language : 'cpp')
-  add_global_arguments('-msse3', language : 'cpp')
-  add_global_arguments('-ffast-math', language : 'cpp')
-  add_global_arguments('-march=native', language : 'cpp')
+  add_project_arguments('-O3', language : 'cpp')
+  add_project_arguments('-msse3', language : 'cpp')
+  add_project_arguments('-ffast-math', language : 'cpp')
+  add_project_arguments('-march=native', language : 'cpp')
 endif
 
 # External dependencies we assume the user has installed
@@ -37,6 +37,8 @@ include_dirs = [
   include_directories('include')
 ]
 
+# Declare varible for subproject inclusion
+libcee_includes = declare_dependency(include_directories: include_directories('include'))
 
 if target_machine.system() == 'windows'
 endif
