@@ -11,6 +11,8 @@ compiler = meson.get_compiler('cpp')
 build_args = [
 ]
 
+pkg = import('pkgconfig')
+
 # Debug or release
 if get_option('buildtype') == 'debug'
   add_project_arguments('-DDEBUG', language : 'cpp')
@@ -58,6 +60,8 @@ cee_lib = library('cee', sources : [
   c_args : build_args,
   install : true,
  )
+
+pkg.generate(cee_lib)
 
 # Installer
 headers = [ 'include/file.hpp',
