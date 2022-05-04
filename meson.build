@@ -50,13 +50,12 @@ build_args += [
   '-DPROJECT_VERSION=' + meson.project_version(),
 ]
 
-
 # The see Library itself
 cee_lib = library('cee', sources : [
   'src/file.cpp',
   ],
   include_directories : include_dirs,
-  link_args : '-Wl,-lstdc++fs,-lpthread',
+  link_args : '-Wl,-lstdc++fs,-lpthread', # TODO - stdc++fs needs a rethink
   c_args : build_args,
   install : true,
  )

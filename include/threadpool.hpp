@@ -12,7 +12,10 @@
  * @date 22/03/2022
  * @brief A theadpool for speeding things up
  * 
+ * https://codereview.stackexchange.com/questions/221626/c17-thread-pool
+ * 
  *  To use the pool:
+ * 
  *  const auto processor_count = std::thread::hardware_concurrency();
  *  ThreadPool pool{ static_cast<size_t>(processor_count) };
  *  std::vector<std::future<int>> futures;
