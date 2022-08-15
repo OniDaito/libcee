@@ -88,14 +88,21 @@ std::vector<std::string> ListFiles(const std::string &path) {
     std::vector<std::string> res;
 #ifdef _WIN32
     for (const auto & entry : std::experimental::filesystem::directory_iterator(path)) {
+        struct stat s;
+        std::string spath = entry.path().string();
+        if( stat(spath.c_str(), &s) == 0 ) {
+            if( s.st_mode & S_IFREG ) {
+                res.push_back(entry.path().string());
+            }     
+        }
+    }
 #else
     for (const auto & entry : std::filesystem::directory_iterator(path)) {
-#endif
         if (entry.is_regular_file()){
             res.push_back(entry.path());
         }
     }
-    
+#endif
     return res;
     
 }
@@ -110,13 +117,23 @@ std::vector<std::string> ListFiles(const std::string &path) {
 
 std::vector<std::string> ListDirs(const std::string &path) {
     std::vector<std::string> res;
-    
+#ifdef _WIN32
+    for (const auto & entry : std::experimental::filesystem::directory_iterator(path)) {
+        struct stat s;
+        std::string spath = entry.path().string();
+        if( stat(spath.c_str(), &s) == 0 ) {
+            if( s.st_mode & S_IFDIR ) {
+                res.push_back(entry.path().string());
+            }     
+        }
+    }
+#else
     for (const auto & entry : std::filesystem::directory_iterator(path)) {
         if (entry.is_directory()){
             res.push_back(entry.path());
         }
     }
-
+#endif
     return res;
 }
 
