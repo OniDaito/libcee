@@ -40,7 +40,7 @@ include_dirs = [
 ]
 
 # Declare varible for subproject inclusion
-libcee_includes = declare_dependency(include_directories: include_directories('include'))
+libcee_dep = declare_dependency(include_directories: include_directories('include'))
 
 if target_machine.system() == 'windows'
 endif
