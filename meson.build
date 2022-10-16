@@ -30,17 +30,15 @@ endif
 # So I have included built versions in this repository.
 message(['Building for', target_machine.system()])
 
+link_args = ''  # TODO - blank ones fail on Windows. We need to choose the defaults
+
 # If we are under linux, add all these as external deps
 if target_machine.system() == 'linux'
+  link_args = '-Wl,-lstdc++fs,-lpthread'
 endif
 
 # The include directories for the dependencies inside this project
-include_dirs = [
-  include_directories('include')
-]
-
-# Declare varible for subproject inclusion
-libcee_dep = declare_dependency(include_directories: include_directories('include'))
+include_dirs = include_directories('include')
 
 if target_machine.system() == 'windows'
 endif
@@ -50,17 +48,20 @@ build_args += [
   '-DPROJECT_VERSION=' + meson.project_version(),
 ]
 
-# The see Library itself
+# The cee Library itself, not that theres very much
 cee_lib = library('cee', sources : [
   'src/file.cpp',
   ],
   include_directories : include_dirs,
-  link_args : '-Wl,-lstdc++fs,-lpthread', # TODO - stdc++fs needs a rethink
+  # link_args : link_args, # TODO - stdc++fs needs a rethink - Also, using blank dooe
   c_args : build_args,
   install : true,
  )
 
 pkg.generate(cee_lib)
+
+# Declare varible for subproject inclusion
+libcee_dep = declare_dependency(include_directories: include_dirs, link_with : cee_lib)
 
 # Installer
 headers = [ 'include/file.hpp',
