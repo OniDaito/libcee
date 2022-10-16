@@ -1,7 +1,7 @@
 # Project details
 project('cee', 'cpp',
   version : '0.1',
-  default_options : ['warning_level=3', 'cpp_std=c++17', 'werror=false'])
+  default_options : ['warning_level=3', 'cpp_std=c++17', 'werror=false', 'default_library=static'])
 
 # Globals and constants
 project_dir  = meson.current_source_dir() # MESON_SOURCE_ROOT
