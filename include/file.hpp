@@ -24,6 +24,7 @@
 #include <iostream>
 #include <filesystem>
 #ifdef _WIN32
+#define  _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include <experimental/filesystem>
 #endif
 
