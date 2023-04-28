@@ -11,3 +11,5 @@ Under linux, the following should work:
     meson setup release
     ninja -C release
     sudo meson install --no-rebuild -C release
+
+Under windows, place the resulting dll in the same location as the executable or statically compile the .lib file and bundle directly with the exe.

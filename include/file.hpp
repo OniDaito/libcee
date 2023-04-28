@@ -33,8 +33,8 @@ namespace libcee {
 std::vector<char> ReadFile(const std::string& filename);
 std::vector<std::string> ReadFileLines(const std::string& filename);
 bool FileExists(const std::string& filename);
-std::vector<std::string> ListFiles(const std::string &path);
-std::vector<std::string> ListDirs(const std::string &path);
+std::vector<std::string> ListFiles(const std::string &path, bool recurse=false);
+std::vector<std::string> ListDirs(const std::string &path, bool recurse=false);
 
 }
 
